@@ -24,7 +24,7 @@ end
 def prizes_from_1950
   # Display Nobel prizes for 1950.
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       *
     FROM
       nobels
@@ -36,7 +36,7 @@ end
 def literature_1962
   # Show who won the 1962 prize for Literature.
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       winner
     FROM
       nobels
@@ -48,7 +48,7 @@ end
 def einstein_prize
   # Show the year and subject that won 'Albert Einstein' his prize.
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       yr, subject
     FROM
       nobels
@@ -60,7 +60,7 @@ end
 def millennial_peace_prizes
   # Give the name of the 'Peace' winners since the year 2000, including 2000.
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       winner
     FROM
       nobels
@@ -73,7 +73,7 @@ def eighties_literature
   # Show all details (yr, subject, winner) of the Literature prize winners
   # for 1980 to 1989 inclusive.
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       *
     FROM
       nobels
@@ -86,7 +86,7 @@ def presidential_prizes
   # Show all details of the presidential winners: ('Theodore Roosevelt',
   # 'Woodrow Wilson', 'Jimmy Carter')
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       *
     FROM
       nobels
@@ -98,7 +98,7 @@ end
 def nobel_johns
   # Show the winners with first name John
   execute(<<-SQL)
-    SELECT
+    SELECT DISTINCT
       winner
     FROM
       nobels
