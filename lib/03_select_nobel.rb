@@ -98,11 +98,11 @@ end
 def nobel_johns
   # Show the winners with first name John
   execute(<<-SQL)
-    SELECT DISTINCT
-      winner
+    SELECT
+      uniq_nobels.winner
     FROM
-      nobels
+      (SELECT DISTINCT * FROM nobels) AS uniq_nobels
     WHERE
-      winner LIKE 'John %'
+      uniq_nobels.winner LIKE 'John %'
   SQL
 end
